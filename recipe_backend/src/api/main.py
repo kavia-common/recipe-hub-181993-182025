@@ -38,7 +38,7 @@ def on_startup():
     "/health",
     tags=["Health"],
     summary="Health Check",
-    description="Returns a simple JSON indicating the service is healthy.",
+    description="Returns a simple JSON indicating the service is healthy. Notes: CORS is configured from env via FRONTEND_ORIGIN (alongside http://localhost:3000 by default). Default local port is 3001.",
 )
 def health_check(db: Session = Depends(get_db)):
     # Optionally seed DB if empty and SEED_ON_START=true
